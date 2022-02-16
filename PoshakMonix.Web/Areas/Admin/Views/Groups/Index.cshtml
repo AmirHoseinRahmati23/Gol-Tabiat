@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PoshakMonix.Models.Entities.Group>
+
+@{
+    ViewData["Title"] = "گروه ها";
+}
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">گروه ها</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">گروه ها</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+            <p>
+                <a asp-action="Add">افزودن</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GroupName)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GroupName)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">ویرایش</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">جزئیات</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

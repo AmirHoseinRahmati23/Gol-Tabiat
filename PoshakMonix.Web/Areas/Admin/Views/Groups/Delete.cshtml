@@ -1,0 +1,50 @@
+﻿@model PoshakMonix.Models.Entities.Group
+
+@{
+    ViewData["Title"] = "حذف گروه";
+}
+
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">حذف گروه</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">حذف گروه</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+
+            <h3>آیا مطمئنید؟</h3>
+            <div>
+                <h4>گروه</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        نام گروه
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.GroupName)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="حذف" class="btn btn-danger" /> |
+                    <a asp-action="Index">بازگشت</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

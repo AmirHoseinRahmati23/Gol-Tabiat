@@ -1,0 +1,112 @@
+﻿@model IEnumerable<PoshakMonix.Models.Entities.Product>
+
+@{
+    ViewData["Title"] = "مدیریت محصولات";
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">مدیریت محصولات</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">مدیریت محصولات</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+
+        <p>
+            <a asp-action="Add">افزودن</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        عکس
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Size)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Material)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WholePrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsAblagh)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.HaveUnderPot)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td style="max-width : 300px">
+                        <img class="mw-100" alt="@item.ProductName" src="/ProductImages/@(item.Image)">
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Material)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @if (item.WholePrice == 0)
+                        {
+                            <p>تخفیف ندارد</p>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.WholePrice)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @((item.IsAblagh)? "بله" : "خیر")
+                    </td>
+                    <td>
+                        @((item.HaveUnderPot)? "بله" : "خیر")
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">ویرایش</a> |
+                        <a asp-action="AddProductToGroup" asp-controller="Product" asp-area="Admin" asp-route-id="@item.Id">اضافه کردن به گروه</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+</div>

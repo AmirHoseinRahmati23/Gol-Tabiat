@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewData["Title"] = "مدیر مدیره خود مدیره";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">پنل مدیریت</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">صفحه اصلی</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>50</h3>
+                            <p>محصولات</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a asp-action="index" asp-controller="Product" asp-area="Admin" class="small-box-footer">مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>2</h3>
+
+                            <p>گروه ها</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-object-group"></i>
+                        </div>
+                        <a asp-action="index" asp-controller="Groups" asp-area="Admin" class="small-box-footer">مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>۴۴</h3>
+
+                            <p>زیر گروه ها</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-object-group"></i>
+                        </div>
+                        <a asp-action="Index" asp-controller="SubGroups" asp-area="Admin" class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>۶۵</h3>
+
+                            <p>کاربران</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <a asp-action="Index" asp-controller="Users"  class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>۱۵۰</h3>
+
+                            <p>سفارشات جدید</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a asp-controller="Factors" asp-action="Index" class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3> <i class="fa fa-heart"></i> </h3>
+
+                            <p>نظرات</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-comment"></i>
+                        </div>
+                        <a asp-controller="Comments" asp-action="Index" class="small-box-footer">مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>5</h3>
+
+                            <p>عکس های اسلایدر</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-image"></i>
+                        </div>
+                        <a asp-controller="SliderImages" asp-controller="Index" class="small-box-footer">مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>10</h3>
+
+                            <p>اسلایدر دوم صفحه اصلی</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-shopping-bag"></i>
+                        </div>
+                        <a asp-controller="SecoundCardSliderItems" asp-action="Index" class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>۱۵۰</h3>
+
+                            <p>پیام های پشتیبانی</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-support"></i>
+                        </div>
+                        <a asp-controller="SupportMessages" asp-action="Index" class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>۵۳<sup style="font-size: 20px">%</sup></h3>
+
+                            <p>مقالات وبلاگ(بزودی)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-refresh"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>۴۴</h3>
+
+                            <p>نظرات وبلاگ(بزودی)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-refresh"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>۶۵</h3>
+
+                            <p>گروه های وبلاگ(بزودی)</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-refresh"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> مدیریت <i class="fa fa-arrow-circle-left"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+
+        </div>
+    </section>
+
+</div>

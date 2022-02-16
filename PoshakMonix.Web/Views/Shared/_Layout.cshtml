@@ -1,0 +1,118 @@
+﻿@inject IGroupRepository groupService;  
+@inject SignInManager<User> signInManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> گل طبیعت | @ViewData["Title"]</title>
+    <link rel="stylesheet icon" href="~/images/logo.jpg">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <div class="site">
+        <header class="headerMenu">
+            <section class="menuBar">
+                <ul class="menuList">
+                    <li class="menuItem"><a asp-action="Index" asp-controller="Home">خانه </a></li>
+                    <li class="menuItem"><a asp-action="Support" asp-controller="Home">درباره ما</a></li>
+                    <li class="menuItem megaMenuButton">دسته بندی</li> 
+                    <li class="menuItem"><a asp-action="Search" asp-controller="Home">جستجوی پیشرفته</a></li>
+                    <span class="signBox">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                        <li class="registerButton normalBtn">
+                            <a asp-controller="Cart" asp-action="Index">سبد خرید</a>
+                        </li>
+                        <li class="signInButton normalBtn">
+                            <form method="POST" asp-action="Logout" asp-controller="Account">
+                                <input type="submit" class="signInButton normalBtn"
+                                       value="خروج" />
+                            </form>
+
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="registerButton normalBtn">
+                            <a asp-action="Register" asp-controller="Account">ثبت نام</a>
+                        </li>
+                        <li class="signInButton normalBtn">
+                            <a asp-action="Login" asp-controller="Account">ورود</a>
+                        </li>
+                    }
+                        </span>
+                    </ul>
+            </section>
+            <section class="MobileMenuBar">
+                <button class="responsive-menu-button">منو</button>
+                <ul class="responsive-menu-list">
+                    <li class="menuItem"><a asp-action="Index" asp-controller="Home">خانه </a></li>
+                    <li class="menuItem"><a asp-action="Support" asp-controller="Home">درباره ما</a></li>
+                    <li class="menuItem"><a asp-action="Search" asp-controller="Home">جستجوی پیشرفته</a></li>
+                    <span class="signBox">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                        <li class="registerButton normalBtn">
+                            <a asp-controller="Cart" asp-action="Index">سبد خرید</a>
+                        </li>
+                        <li class="signInButton normalBtn">
+                            <form method="POST" asp-action="Logout" asp-controller="Account">
+                                <input type="submit" class="signInButton normalBtn"
+                                       value="خروج" />
+                            </form>
+
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="registerButton normalBtn">
+                            <a asp-action="Register" asp-controller="Account">ثبت نام</a>
+                        </li>
+                        <li class="signInButton normalBtn">
+                            <a asp-action="Login" asp-controller="Account">ورود</a>
+                        </li>
+                    }
+                        </span>
+
+        </section>
+
+        @RenderBody();
+
+        <footer class="footer" id="footer">
+
+            <section class="believeUs">
+                <div class="believeSign">
+                    <h3>نماد اعتماد</h3>
+                </div>
+                <div class="believeSign">
+                    <h3>اعتماد نماد</h3>
+                </div>
+            </section>
+            <section class="believeUs">
+                <ul class="phone">
+                    <li class="phone-item">گل طبیعت</li>
+                    <li class="phone-item">موبایل:09333689248</li>
+                    <li class="phone-item">ایمیل:Test@GMAIL.COM</li>
+                </ul>
+            </section>
+            @*coming soon <section class="believeUs">
+                <div class="believeSign">
+                    <form asp-action="SaveEmail" asp-controller="Home" asp-area="">
+                        <p>ایمیل خود را ثبت کنید تا از جدیدترین اخبار مطلع شوید</p>
+                        <input type="email" />
+                        <input type="submit" value="ثبت" />
+                    </form>
+                </div>
+            </section>*@
+        </footer>
+
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="~/js/animate.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

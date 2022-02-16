@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "53295107-e162-46ae-bd15-b40bc4f28ab6": {
+      "ProjectGuid": "53295107-e162-46ae-bd15-b40bc4f28ab6",
+      "DisplayName": "PoshakMonix.Web",
+      "ColorIndex": 0
+    },
+    "c10de9d8-8597-4f28-96f0-97d4a73ac02b": {
+      "ProjectGuid": "c10de9d8-8597-4f28-96f0-97d4a73ac02b",
+      "DisplayName": "PoshakMonix.Data",
+      "ColorIndex": 1
+    },
+    "fa6f8229-2d79-4f65-aaff-d5b63585d31d": {
+      "ProjectGuid": "fa6f8229-2d79-4f65-aaff-d5b63585d31d",
+      "DisplayName": "PoshakMonix.Models",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

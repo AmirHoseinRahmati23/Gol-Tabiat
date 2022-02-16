@@ -1,0 +1,39 @@
+﻿@model SupportMessage
+@{
+    ViewData["Title"] = "پشتیبانی";
+}
+@section Styles{ 
+    <link rel="stylesheet" href="~/css/us.css" />
+}
+@section Scripts{ 
+    <script src="~/js/us.js"></script>
+}
+<section class="content">
+    <div class="about-us">
+        <h1 class="about-head">درباره ما</h1>
+        <div class="about-text">
+            <p>گل طبیعت فعالیت خود را در سال 1400 آغاز کرد و به هموطنان عزیز خدمات عالی ارائه می دهد </p>
+            <p>فروش فقط بصورت آنلاین</p>
+            <p>ارسال کالا به سراسر کشور</p>
+
+        </div>
+
+        <h2 class="about-head">تماس با ما</h2>
+        <ul>
+            <li class="contact-item">شماره تماس :09333689248</li>
+            <li class="contact-item">آدرس ایمیل : Test@GMAIL.COM</li>
+        </ul>
+
+
+        <div class="support-send">
+            <h2 class="support-head">پیام به پشتیبانی</h2>
+            <form method="post" asp-action="SupportMessage" asp-controller="Home">
+                <input asp-for="UserName" class="name-input" placeholder="نام" type="text">
+                <input asp-for="Email" class="email-input" placeholder="ایمیل" type="text">
+                <textarea asp-for="Text" class="text-input" placeholder="متن پیام(ترجیحا اطلاعات تماس خود را هم در متن پیام بنویسید)" cols="30" rows="10"></textarea>
+
+                <input class="send-btn" type="submit" value="ارسال">
+            </form>
+        </div>
+    </div>
+</section>

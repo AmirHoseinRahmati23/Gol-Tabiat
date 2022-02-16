@@ -1,0 +1,47 @@
+﻿@model List<ShowProductsInCardSliderManagementViewModel>
+
+@{
+    ViewData["Title"] = "افزودن";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">افزودن کارت</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active"> <a asp-action="SliderCardItems" asp-controller="Home" asp-area="Admin">کارت های کارت اسلایدر دوم</a> </li>
+                        <li class="breadcrumb-item active">افزودن</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Add">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label">محصولات</label>
+                        @foreach (var item in Model)
+                        {
+                            <br />
+                            <input type="checkbox" name="products" value="@item.Id" />
+                            <label>@item.Name</label>
+                        }
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="ساخت" class="btn btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+

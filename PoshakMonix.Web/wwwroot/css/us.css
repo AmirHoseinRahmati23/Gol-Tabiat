@@ -1,0 +1,82 @@
+
+
+/* About Us */
+ol{
+    list-style-type: decimal;
+}
+.about-us{
+    margin: 32px;
+    border-radius: 30px;
+    padding: 40px;
+    background-color: snow;
+    box-shadow: 0px 0px 30px #D41669;
+}
+.about-head{
+    color: #333333;
+}
+.contact-item , .about-text p , .about-text ol li{
+    color: #555555;
+}
+.contact-item::before{
+    content: "\2022";
+    color: #D64316;
+    font-weight: bold;
+    display: inline-block;
+    width: 9px;
+}
+
+/* About Us */
+
+/* Support & BackUp */
+.support{
+    margin: 32px;
+    border-radius: 30px;
+    padding: 40px;
+    background-color: snow;
+    box-shadow: 0px 0px 30px #D64316;
+}
+.support-head{
+    color: #333333;
+    text-align: center;
+}
+.support-send{
+    margin-top: 30px;
+    border: 2px solid #D41669;
+    padding: 20px;
+    border-radius: 30px;
+}
+.support-send > form{
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 15px;
+}
+.name-input, .text-input, .email-input{
+    margin-bottom: 10px;
+    transition: 0.4s;
+    width: 300px;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+}
+.name-input:focus, .text-input:focus, .email-input:focus{
+    transform: rotate(-2deg) scale(1.03);
+    box-shadow: 0px 0px 20px #D64316;
+}
+.send-btn{
+    border: 2px solid #D41669;
+    background-color: snow;
+    padding: 12px;
+    border-radius: 20px;
+    color: #444444;
+    transition: all 0.4s , transform 0.5s;
+    width: 100px;
+}
+.send-btn:hover{
+    border: 2px solid snow;
+    background-color: #D64316;
+    color: snow;
+    box-shadow: 0px 0px 20px #D41669;
+    transform: rotate(359.99999deg);
+}
+/* Support & BackUp */

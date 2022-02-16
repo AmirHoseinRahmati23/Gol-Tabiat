@@ -1,0 +1,78 @@
+﻿@model SearchViewModel
+@{
+    ViewData["Title"] = "جستجو";
+}
+@section Styles{ 
+    <link rel="stylesheet" href="~/css/search.css" />
+    <style>
+        .site {
+            position: relative;
+            min-height: 100vh;
+        }
+        footer {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%
+        }
+    </style>
+} 
+@section Scripts{ 
+    <script src="~/js/search.js"></script>
+} 
+<section class="content">
+    <form method="post">
+        <div class="search-fillters">
+            <button class="active-buttons" id="activeButton">فعال کردن همه</button>
+            <button class="active-buttons" id="disableButton">غیر فعال کردن همه</button>
+            @foreach (var item in Model.Groups)
+            {
+                <span class="fillter">
+                    <input value="@item.Id" name="groupIds" type="checkbox"> <label>@item.Name</label>
+                </span>
+            }
+
+
+        </div>
+
+        <div class="search-input">
+            <input asp-for="@Model.SearchText" type="text" placeholder="متن را وارد کنید(مثال : پیراهن)">
+            <input type="submit" value="جستجو">
+
+            <div class="search-result">
+                @if (Model.Products.Items != null)
+                {
+                    foreach (var item in Model.Products.Items)
+                    {
+                        <div class="card">
+                            <img class="card-image" src="~/ProductImages/@item.Image" alt="">
+                            <h3 class="card-head">@item.ProductName</h3>
+                            <p class="card-price">قیمت : <span class="text-price">@item.Price</span></p>
+                            <div class="card-button">
+                                <button>
+                                    <a asp-action="Detail" asp-controller="Home"
+                                       asp-area="" asp-route-id="@item.Id">مشاهده جزئیات</a>
+                                </button>
+                            </div>
+                            @if (item.Groups != null)
+                            {
+                                <span class="card-groups">
+                                    @foreach (var group in item.Groups)
+                                    {
+                                        <span class="group">
+                                            @group.Name
+                                        </span>
+                                    }
+                                </span>
+                            }
+
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+
+    </form>
+</section>

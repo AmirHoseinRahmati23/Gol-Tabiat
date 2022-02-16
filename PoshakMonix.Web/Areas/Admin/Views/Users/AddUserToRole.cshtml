@@ -1,0 +1,48 @@
+﻿@inject UserManager<User> userManager;
+@model IEnumerable<RoleListViewModel>
+
+@{
+    ViewData["Title"] = "دادن نقش به کاربر";
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">دادن نقش به کاربر</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">دادن نقش به کاربر
+                        
+                        </li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+            <h2>دادن نقش به کاربر</h2>
+
+
+            <form method="post" asp-action="AddUserToRole">
+                @foreach (var item in Model)
+                {
+                    <input type="checkbox" name="roles" value="@item.RoleName"
+                           @((await userManager.IsInRoleAsync(ViewBag.User, item.RoleName.ToUpper())) ? "checked" : "") />
+                    <label> @Html.DisplayFor(model => item.RoleName) </label>
+                    <br />
+                }
+                <input type="hidden" value="@ViewBag.User.Id" name="userId" />
+                <input type="submit" class="btn btn-success" />
+            </form>
+        </div>
+    </section>
+</div>
+
+

@@ -1,0 +1,45 @@
+﻿@model SupportMessage
+
+@{
+    ViewData["Title"] = "جواب دادن";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">جواب دادن</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">جواب دادن</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="SendMessage" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label class="control-label">متن جواب</label>
+                        <input asp-for="Text" class="form-control" />
+                        <span asp-validation-for="Text" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="UserName" />
+                    <input type="hidden" asp-for="Email"/>
+                    <div class="form-group">
+                        <input type="submit" value="ارسال" class="btn btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+</div>

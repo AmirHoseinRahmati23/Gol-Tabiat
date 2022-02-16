@@ -1,0 +1,256 @@
+/*  ALL  */
+@font-face{
+    src : url(/font/Vazir.ttf);
+    font-family: Vazir;
+}
+*{
+    margin: auto;
+    font-family: Vazir;
+    z-index: 1;
+}
+ul{
+    list-style: none;
+}
+body{
+    direction: rtl;
+    background-color: #dddddd;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+button:focus,input:focus,textarea:focus{
+    outline: none;
+}
+/* ALL */
+/* Scroll Bar */
+ /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #111111;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #D41669;
+    border-radius: 30px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D64316;
+  }
+/* Scroll Bar */
+
+
+/* Header  */
+.menuBar{
+    background-color: #141414;
+    height: 30px;
+    padding: 16px;
+}
+.MobileMenuBar{
+    background-color: #141414;
+    height: 30px;
+    padding: 16px;
+    display: none;
+}
+.menuItem{
+    display: inline-block;
+    margin: 0px 5px;
+    color: snow;
+    transition: 0.5s;
+}
+.menuItem:hover{
+    transform: scale(1.1);
+    color: #e2ce1b;
+}
+.menuItem:hover a{
+    color: #e2ce1b;
+}
+.menuItem > a{
+    color: snow;
+}
+
+.signBox{
+    position: absolute;
+    top: 12px;
+    left: 38px;
+}
+.signInButton,.registerButton{
+    display: inline-block;
+    background-color: snow;
+    border : 1px solid snow;
+    padding: 12px;
+    border-radius: 15px;
+    margin-right: 5px;
+}
+.normalBtn{
+    background-color: snow;
+    border: 1px solid snow;
+    padding: 5px;
+    border-radius: 15px;
+    color: #141414;
+    transition: 0.5s;
+}
+.normalBtn:hover{
+    box-shadow: 0px 0px 30px #D64316;
+    background-color: #D41669;
+    padding : 5px;
+    transform: scale(1.1);
+    color: snow;
+}
+.normalBtn:hover a{
+    color: snow;
+}
+.shopping{
+    flex-flow: row nowrap;
+    width: 48%;
+    height: 400px;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.shopping div ul li a , .shopping div ul li h3{
+    color: snow;
+}
+.shopping div ul li a:hover , .shopping div ul li h3:hover{
+    color: #D41669;
+}
+.megaMenu{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    background-color: #222222;
+    color: snow;
+}
+.responsive-mega{
+    background: transparent;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    z-index: 5;
+}
+.responsive-mega > div{
+    height: 0;
+    display: none;
+    transition: 0.5s;
+    background-color: #141414;
+    padding: 20px 10px;
+    width: 200px;
+}
+.responsive-mega > div ul li a{
+    color: snow;
+}
+
+/* Header  */
+
+/* Footer */
+/* Footer */
+#footer{
+    background-color: #111111;
+}
+
+.believeUs{
+    display: inline-flex;
+    flex-flow: row nowrap;
+    width: 48%;
+    height: 200px;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.believeSign{
+    background-color: #D64316;
+}
+.believeSign > h3{
+    color: snow;
+}
+.phone{
+    display: inline-flex;
+    flex-flow: column;
+    height: 100px;
+    justify-content: space-around;
+}
+.phone-item{
+    color: snow;
+}
+/* Footer */
+/* Footer */
+
+@media only screen and (max-width : 800px){
+    .menuBar{
+        display: none;
+    }
+    .MobileMenuBar{
+        display: block;
+        position: fixed;
+        width: 40px;
+        z-index: 5;
+        top: 0px;
+    }
+    .responsive-menu-list{
+        opacity: 0;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        width: 50%;
+        z-index: 7;
+        background-color: #141414;
+        transition: 0.5s;
+        display: none;
+    }
+    .responsive-menu-list li{
+        display: block;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .signBox{
+        position: relative;
+        text-align: center;
+        top: 0;
+        left: 0;
+    }
+    .signInButton,.registerButton{
+        width: 50px;
+        text-align: center;
+    }
+    .headerImage{
+        width: 100%;
+    }
+    .responsive-mega > .gender{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #141414;
+        opacity: 1;
+    }
+    
+}
+@media only screen and (max-width : 500px){
+    #header{
+        height: 800px;
+    }
+    #header::before{
+        height: 800px;
+    }
+    .headerImageBox{
+        width: 100%;
+    }
+    .headerImage{
+        width: 70%;
+        margin-right: 90px;
+    }
+    .headerText {
+        width: 100%;
+        padding-right: 140px;
+        padding-top: 100px;
+    }
+    .believeUs{
+        width: 90%;
+    }
+
+}

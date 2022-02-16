@@ -1,0 +1,15 @@
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\bin\Debug\net5.0\PoshakMonix.Models.deps.json
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\bin\Debug\net5.0\PoshakMonix.Models.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\bin\Debug\net5.0\ref\PoshakMonix.Models.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\bin\Debug\net5.0\PoshakMonix.Models.pdb
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.AssemblyInfoInputs.cache
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.AssemblyInfo.cs
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.csproj.CoreCompileInputs.cache
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\ref\PoshakMonix.Models.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.pdb
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\bin\Debug\net5.0\PoshakMonix.Models.runtimeconfig.json
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\bin\Debug\net5.0\PoshakMonix.Models.runtimeconfig.dev.json
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.genruntimeconfig.cache
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Models\obj\Debug\net5.0\PoshakMonix.Models.csproj.AssemblyReference.cache

@@ -1,0 +1,15 @@
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\bin\Release\net5.0\PoshakMonix.Core.deps.json
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\bin\Release\net5.0\PoshakMonix.Core.runtimeconfig.json
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\bin\Release\net5.0\PoshakMonix.Core.runtimeconfig.dev.json
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\bin\Release\net5.0\PoshakMonix.Core.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\bin\Release\net5.0\ref\PoshakMonix.Core.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\bin\Release\net5.0\PoshakMonix.Core.pdb
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.csprojAssemblyReference.cache
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.AssemblyInfoInputs.cache
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.AssemblyInfo.cs
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.csproj.CoreCompileInputs.cache
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\ref\PoshakMonix.Core.dll
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.pdb
+D:\Asp.netCore\PoshakMonix\PoshakMonix.Core\obj\Release\net5.0\PoshakMonix.Core.genruntimeconfig.cache

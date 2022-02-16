@@ -1,0 +1,38 @@
+﻿@model Cart
+@{
+    ViewData["Title"] = "سبد خرید";
+}
+@section Scripts{
+    <script src="~/js/cart.js"></script>
+}
+@section Styles{
+    <link rel="stylesheet" href="~/css/cart.css" />
+}
+
+<section class="content">
+    @if (ViewBag.Error == "")
+    {
+        <h1 class="cart-head">سبد خرید</h1>
+        @foreach (var item in Model.CartDetails)
+        {
+            <div class="product">
+                <h3 class="product-name">@item.Name</h3>
+                <p class="product-price">@(item.Price * item.Quantity) هزار تومن (تعداد:@item.Quantity)</p>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="delete">حذف</a>
+            </div>
+        }
+
+
+        <h3 class="final-price">قیمت کل: @Model.CartDetails.Sum(c => c.Price) هزار تومن</h3>
+
+        <form method="post" asp-action="FinilizeCart" class="address-form">
+            <textarea name="address" class="addressInput" placeholder="آدرس" cols="60" rows="5"></textarea>
+            <input type="hidden" value="@Model.Id" name="id" />
+            <input class="submit" type="submit" value="اتمام خرید" />
+        </form>
+    }
+    else
+    {
+        <h1 class="cart-head">سبد خرید موجود نیست</h1>
+    }
+</section>

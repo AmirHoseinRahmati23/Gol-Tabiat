@@ -1,0 +1,146 @@
+﻿@model HomePageViewModel
+@{
+    ViewData["Title"] = "خانه";
+}
+
+<section class="header" id="header">
+    <section class="headerText">
+        <h1 class="headInHeader">گل طبیعت</h1>
+        <p class="textInHeader">فروش انواع گل و گلدان <br>با ارسال به سراسر کشور</p>
+        <button class="buttonInHeader"><a href="">همین حالا خرید کنید</a></button>
+    </section>
+    <section class="headerImageBox">
+        <img class="headerImage" src="~/images/header-image2.png" alt="">
+    </section>
+</section>
+
+<section class="content" id="content">
+    <section class="sliderBox">
+        <div class="slider">
+            <div>
+
+                <div class="swiper-container content-slider">
+
+                    <div class="swiper-wrapper">
+
+                        <!-- Slides -->
+                        @foreach (var image in Model.SliderImages)
+                        {
+                            <div class="swiper-slide">
+                                <img class="sliderImage" src="~/SliderImages/@image.Image" alt="">
+                            </div>
+                        }
+
+                    </div>
+
+
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev image-slider-prev"></div>
+                    <div class="swiper-button-next image-slider-next"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cardSliderBox">
+        <div class="card-slider">
+            <h2 class="card-slider-header">جدیدترین ها</h2>
+            <div class="card-container1">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+
+                    @foreach (var item in Model.NewestProducts)
+                    {
+
+                        <div class="swiper-slide card">
+                            <img class="card-image" src="~/ProductImages/@item.Image" alt="@item.ProductName">
+                            <h3 class="card-head">@item.ProductName</h3>
+
+                            @if (item.WholePrice == 0)
+                            {
+                                <p class="card-price">قیمت : <span class="text-price">@item.Price هزار تومان</span></p>
+                            }
+
+                            <div class="card-button">
+                                <button><a asp-action="Detail" asp-controller="Home" asp-area="" asp-route-id="@item.Id">مشاهده جزئیات</a></button>
+                            </div>
+                            <span class="card-groups">
+                                @foreach (var group in item.Groups)
+                                {
+                                    <span class="group">
+                                        <a>
+                                            @group.Name
+                                        </a>
+                                    </span>
+                                }
+                            </span>
+                        </div>
+                    }
+
+
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev card-slider1-prev"></div>
+                <div class="swiper-button-next card-slider1-next"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="cardSliderBox">
+        <div class="card-slider">
+            <h2 class="card-slider-header">پیشنهادی ها</h2>
+            <div class="card-container1">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+
+                    @foreach (var item in Model.SecoundCardSliderItems)
+                    {
+
+                        <div class="swiper-slide card">
+                            <img class="card-image" src="~/ProductImages/@item.Image" alt="@item.ProductName">
+                            <h3 class="card-head">@item.ProductName</h3>
+
+                            @if (item.WholePrice == 0)
+                            {
+                                <p class="card-price">قیمت : <span class="text-price">@item.Price هزار تومان</span></p>
+                            }
+
+                            <div class="card-button">
+                                <button><a asp-action="Detail" asp-controller="Home" asp-area="" asp-route-id="@item.Id">مشاهده جزئیات</a></button>
+                            </div>
+                            <span class="card-groups">
+                                @foreach (var group in item.Groups)
+                                {
+                                    <span class="group">
+                                        <a>
+                                            @group.Name
+                                        </a>
+                                    </span>
+                                }
+                            </span>
+                        </div>
+                    }
+
+
+                </div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev card-slider1-prev"></div>
+                <div class="swiper-button-next card-slider1-next"></div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+    @section Styles{
+        <link rel="stylesheet" href="~/css/index.css" />
+    }
+    @section Scripts{
+        <script src="~/js/index.js"></script>
+    }

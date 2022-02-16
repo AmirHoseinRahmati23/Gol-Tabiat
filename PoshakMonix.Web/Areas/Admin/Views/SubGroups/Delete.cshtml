@@ -1,0 +1,53 @@
+﻿@model PoshakMonix.Models.Entities.SubGroup
+
+@{
+    ViewData["Title"] = "حذف زیرگروه";
+}
+
+
+<h3>آیا مطمئنید؟</h3>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">حذف زیرگروه</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">حذف زیرگروه</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+            <h4>SubGroup</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Group)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Group.GroupName)
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="حذف" class="btn btn-danger" /> |
+                <a asp-action="Index">بازگشت</a>
+            </form>
+        </div>
+    </section>
+</div>

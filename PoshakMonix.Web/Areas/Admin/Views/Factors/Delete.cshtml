@@ -1,0 +1,60 @@
+﻿@model PoshakMonix.Models.Entities.Factor
+
+@{
+    ViewData["Title"] = "حذف فاکتور";
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">حذف فاکتور</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">حذف فاکتور</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+        <div class="row">
+            <div>
+
+                <h2>ناموصا مطمئنی؟</h2>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Sended)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Sended)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IsPayed)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.IsPayed)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="حذف" class="btn btn-danger" />
+                    <a asp-action="Index">بازگشت</a>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

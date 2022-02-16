@@ -1,0 +1,74 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "جزِئیات محصول";
+}
+
+
+<section class="content" id="content">
+    <div class="product">
+        <div class="product-image-box">
+            <img class="product-image" src="~/ProductImages/@Model.Image" alt="">
+            <h2 class="product-name">@Model.ProductName</h2>
+
+            @if (Model.WholePrice != 0)
+            {
+                <p class="large-price">@Model.WholePrice هزار تومن</p>
+            }
+            <p class="price">@Model.Price هزار تومن</p>
+        </div>
+        <div class="product-information-box">
+            <h3 class="product-name">توضیحات محصول</h3>
+            <div class="product-information">
+                <ul>
+                    <li class="product-item">سایز گلدان : @Model.Material</li>
+                    <li class="product-item">رنگ گلدان : @Model.Color</li>
+                    <li class="product-item"> موجود : @( (Model.Quantity > 0)? "هست":"نیست" )</li>
+                    <li class="product-item">خاک گلدان ابلق هست؟ : @( (Model.IsAblagh)? "هست":"نیست" )</li>
+                    <li class="product-item">زیره گلدان دارد؟ : @( (Model.HaveUnderPot)? "هست":"نیست" )</li>
+                </ul>
+            </div>
+            
+            @if(Model.Groups.Any())
+             {
+                <span class="product-groups">
+                    <span class="product-group">@Model.Groups.First().Group.GroupName</span>
+                    @foreach (var item in Model.Groups)
+                     {
+                        <span class="product-group">@item.Name</span>
+                     }
+                </span>
+             }
+
+            <p class="product-information-text">
+                <strong>جزئیات محصول</strong> : @Model.Description
+            </p>
+        </div>
+        <div class="product-call-to-action">
+            <button class="product-CTA"> <a asp-action="Add" asp-controller="Cart" asp-route-id="@Model.Id">افزودن به سبد خرید</a> </button>
+        </div>
+    </div>
+    <div class="comments">
+        <form class="frm-add-comment" asp-action="AddComment" asp-controller="Home" method="post">
+            <input class="input-name input" type="text" name="userName" placeholder="نام">
+            <input class="input-email input" type="text" name="email" placeholder="ایمیل">
+            <input type="hidden" name="productId" value="@Model.Id" />
+            <textarea class="input-text input" rows="10" cols="30" name="commentText" placeholder="متن نظر"></textarea>
+            <input type="submit" class="comment-send" value="ثبت">
+        </form>
+        @foreach (var item in Model.Comments)
+        {
+            <div class="comment">
+                <h3 class="comment-head">@item.UserName</h3>
+                <p class="comment-text">@item.Text</p>
+            </div>
+        }
+    </div>
+</section>
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/detail.css" />
+}
+@section Scripts{
+    <script src="~/js/detail.js"></script>
+}

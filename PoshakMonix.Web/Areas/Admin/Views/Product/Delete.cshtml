@@ -1,0 +1,108 @@
+﻿@model PoshakMonix.Models.Entities.Product
+
+@{
+    ViewData["Title"] = "حذف";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">حذف محصول</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <li class="breadcrumb-item active"> <a asp-action="Index" asp-controller="Home" asp-area="Admin">مدیریت</a> </li>
+                        <li class="breadcrumb-item active">حذف محصول</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <section class="container-fluid">
+
+        @if (Model != null)
+        {
+            <h3>مطمئنید که میخواید ایشونو حذف کنید؟ گناه دارنا!</h3>
+            <div>
+                <h4>Product</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ProductName)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Size)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Size)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Material)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Material)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+                    @if (Model.WholePrice != 0)
+                    {
+                        <dt>
+                            @Html.DisplayNameFor(model => model.WholePrice)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.WholePrice)
+                        </dd>
+                    }
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </dt>
+                    <dd>
+                        <img class="w-25" href="/ProductImages/@(Model.Image)" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IsAblagh)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.IsAblagh)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.HaveUnderPot)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.HaveUnderPot)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="حذف" class="btn btn-danger" /> |
+                    <a asp-action="Index">بازگشت</a>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger">
+                <h2 class="alert-heading">محصولی با این مشخصات یافت نشد</h2>
+                <p>میتوانید از طریق <a asp-action="Andex" asp-controller="Product" asp-area="Admin">این لینک</a> به صفحه اصلی بازگردید</p>
+
+            </div>
+        }
+    </section>
+</div>
